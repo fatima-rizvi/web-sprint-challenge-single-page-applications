@@ -31,8 +31,11 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+    useRouteMatch lets you add nested routes to your application. You can use it so you only have to change one thing in your URL instead of the wole URL.
 1. How would you explain form validation to someone who has never programmed before?
+    Validation is the thing that makes sure the input the user is giving meets what the form requires. Like when you try to make a password on a website and it tells you the password you entered is too short or needs a special character, that the program using validation to verify the input is allowed and meets standards.
 1. In 1-2 sentences, define end to end testing.
+    End to end testing focuses on the whole user experience and checks to see if a user can complete an action successfully. They mimic the way a user would interact with an app.
 
 ## Instructions
 
@@ -49,22 +52,22 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 Your finished project must include all of the following requirements:
 
-- [ ] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
-- [ ] A form with a "/pizza" route
-- [ ] A name text input field
-- [ ] Validation for name - name must be at least 2 characters
-- [ ] A dropdown for pizza size
-- [ ] A checklist for toppings - at least 4 (hint: name each separately!)
-- [ ] Text input for special instructions
-- [ ] An Add to Order button that submits form and returns a database record of name, size, toppings and special instructions
+- [x] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable)
+- [x] A form with a "/pizza" route
+- [x] A name text input field
+- [x] Validation for name - name must be at least 2 characters
+- [x] A dropdown for pizza size
+- [x] A checklist for toppings - at least 4 (hint: name each separately!)
+- [x] Text input for special instructions
+- [x] An Add to Order button that submits form and returns a database record of name, size, toppings and special instructions
 
 #### Testing MVP
 
 Implement the following tests in Cypress:
 
-- [ ] test that you can add text to the box
-- [ ] test that you can select multiple toppings
-- [ ] test that you can submit the form
+- [x] test that you can add text to the box
+- [x] test that you can select multiple toppings
+- [x] test that you can submit the form
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -74,9 +77,11 @@ After finishing your required elements, you can push your work further. These go
 
 - [ ] Toggle form component for gluten free crust
 - [ ] Turn form element sections into nested routes
-- [ ] Test more of the application with Cypress
+    -Attempted this, didn't succeed
+- [x] Test more of the application with Cypress
 - [ ] Build UI for the eventuality of a network error when POSTing the order
 - [ ] Add functionality to your order button that it leads to a Congrats! Pizza is on it's way! page **and** returns a database record of the whole order
+    -Attempted this, didn't succeed
 
 ## FAQs
 

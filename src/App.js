@@ -92,11 +92,11 @@ useEffect(() => {
       <h2>Click the button below to get started!</h2>
       <div className = 'pizza-link'>
         <button>
-          <Link to='/pizza-form' className = 'buildPizzaBtn'>Build My Pizza</Link>
+          <Link to='/pizza' className = 'buildPizzaBtn'>Build My Pizza</Link>
         </button>
       </div>
       <Switch>
-        <Route path = '/pizza-form'>
+        <Route path = '/pizza'>
           <PizzaForm 
             values = {formValues}
             change = {inputChange}
