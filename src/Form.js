@@ -4,7 +4,7 @@ import Conformation from './Confirmation_Page'
 
 export default function PizzaForm (props) {
 
-    const { values, change, submit, disabled, errors, orders } = props
+    const { values, change, submit, disabled, errors } = props
 
     const onSubmit = evt => {
         evt.preventDefault()
@@ -97,16 +97,6 @@ export default function PizzaForm (props) {
                 <button disabled = {disabled}>Add to Order</button>
             </form>
         </div>
-        <div className = 'allOrders'>
-            <div className = 'confirm-link'>
-                <button>
-                <Link to='/confirmed' className = 'confirmBtn'>Confirm Order</Link>
-                </button>
-            </div>
-        </div>
-        <Route path = '/confirmed'>
-            <Conformation fullOrder = {orders}/>
-        </Route>
     </div>
     )    
 

@@ -70,7 +70,7 @@ const App = () => {
       name: formValues.name.trim(),
       instruction: formValues.instruction.trim(),
       size: formValues.size,
-      toppings: ['pepperoni', 'jalepenos','mushrooms','pineapple','olives'].filter(top => formValues[top])
+      toppings: ['pepperoni', 'jalepenos','mushrooms','pineapple','olives'].filter(top => formValues[top]),
     }
     postNewOrder(newOrder)
   }
@@ -110,6 +110,22 @@ useEffect(() => {
           <Home />
         </Route>
       </Switch>
+      <div className = 'order-details'>
+        <h3>Order details:</h3>
+            {
+                orders.map((order) => {
+                    console.log(order);
+                    return(
+                    <div className = 'single-pizza'>
+                        <p>Name: {order.name} </p>
+                        <p>Size: {order.size} </p>
+                        <p>Toppings: {order.toppings} </p>
+                        <p>Special Instrutions: {order.instruction} </p>
+                    </div>
+                    )
+                })
+            }
+      </div>
     </>
   );
 };
