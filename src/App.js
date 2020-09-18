@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 import { Route, Link, Switch } from 'react-router-dom'
 import PizzaForm from './Form'
 import Home from './Home'
+import schema from './formSchema'
+import * as yup from 'yup'
 
 const initialValues = {
   //Text input
   name: '',
-  specialIntructions: '',
+  instruction: 'none',
   //Dropdown
   size: '',
   //Check boxes
@@ -60,14 +61,14 @@ const App = () => {
     validate(name, value)
     setFormValues({
       ...formValues,
-      [nae]: value
+      [name]: value
     })
   }
 
   const submitValues = () => {
     const newOrder = {
       name: formValues.name.trim(),
-      specialIntructions: formValues.specialIntructions.trim(),
+      instruction: formValues.instruction.trim(),
       size: formValues.size,
       toppings: ['pepperoni', 'jalepenos','mushrooms','pineapple','olives'].filter(top => formValues[top])
     }
@@ -102,9 +103,10 @@ useEffect(() => {
             submit = {submitValues}
             disabled = {disabled}
             errors = {formErrors}
+            allOrder = {orders}
           />
         </Route>
-        <Route path = '/'>
+        <Route exact strict path = '/'>
           <Home />
         </Route>
       </Switch>
