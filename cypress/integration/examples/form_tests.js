@@ -14,6 +14,7 @@ describe('Quotes app', () => {
     const submit = () => cy.get('button.submitBtn')
     const order = () => cy.get('div.order-details')
     const select = () => cy.get('select')
+    const errors = () => cy.get('.errors')
 
     it('add text to name input', () => {
         buildPizza()
@@ -70,5 +71,25 @@ describe('Quotes app', () => {
         .should('be.visible')
   })
 
+  it('check name validation errors', () => {
+    buildPizza()
+        .click()
+    nameInput()
+      .type('J')
+    errors()
+      .contains('Name must be 2 chars or longer')
+        //Check error if name is empty
+    nameInput()
+      .type('{backspace}')
+    errors()
+      .contains('Name is required')
+  })
+
+  it('check if submit button is initially disabled', () => {
+    buildPizza()
+      .click()
+    submit()
+      .should('be.disabled')
+  })
 
 })
