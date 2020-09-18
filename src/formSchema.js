@@ -11,5 +11,6 @@ export default yup.object().shape({
     jalepenos: yup.boolean(),
     mushrooms: yup.boolean(),
     pineapple: yup.boolean(),
-    olives: yup.boolean()
+    olives: yup.boolean(),
+    glutenFree: yup.boolean()
 })

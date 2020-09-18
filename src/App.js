@@ -16,7 +16,8 @@ const initialValues = {
   jalepenos: false,
   mushrooms: false,
   pineapple: false,
-  olives: false    
+  olives: false,
+  glutenFree: false    
 }
 
 const initialFormErrors = {
@@ -71,6 +72,7 @@ const App = () => {
       instruction: formValues.instruction.trim(),
       size: formValues.size,
       toppings: ['pepperoni', 'jalepenos','mushrooms','pineapple','olives'].filter(top => formValues[top]),
+      glutenFree: formValues.glutenFree
     }
     postNewOrder(newOrder)
   }
@@ -114,11 +116,17 @@ useEffect(() => {
         <h3>Order details:</h3>
             {
                 orders.map((order) => {
-                    console.log(order);
+                    let glutenFree;
+                    if(order.glutenFree === true){
+                      glutenFree = 'Yes'
+                    }else{
+                      glutenFree = 'No'
+                    }
                     return(
                     <div className = 'single-pizza'>
                         <p>Name: {order.name} </p>
                         <p>Size: {order.size} </p>
+                        <p>Gluten-Free Crust: {glutenFree}</p>
                         <p>Toppings: {order.toppings} </p>
                         <p>Special Instrutions: {order.instruction} </p>
                     </div>

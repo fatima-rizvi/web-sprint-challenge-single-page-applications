@@ -42,6 +42,14 @@ export default function PizzaForm (props) {
                         <option value = 'extra-large'>Extra Large</option>
                     </select>
                 </label>
+                <label>Gluten Free Crust:&nbsp;
+                    <input 
+                        name = 'glutenFree'
+                        type = 'checkbox'
+                        checked = {values.glutenFree}
+                        onChange = {onChange}
+                    />
+                </label>
                 <p>Toppings:</p>
                 <label>Pepperoni:
                     <input 
